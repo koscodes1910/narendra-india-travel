@@ -3,19 +3,65 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<title>Book Your Journey | Narendra India Travel</title>
+<title>Book Your Journey | Jolly Grant Airport, Dehradun | Narendra India Travel</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-.booking-section {
+/* Prevent ugly mid-word breaks */
+body {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* Ensure headings wrap properly */
+h1, h2, h3, h4, p {
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.avatar {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #1f4d3a;
+    white-space: nowrap;
+    text-align: center;
+}
+.section {
     background: linear-gradient(to bottom, #f6f1ea, #ffffff);
-    padding: 80px 20px;
+    padding: 50px 50px;
     text-align: center;
 }
 
-.booking-section h2 {
+.section h1, h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #1f4d3a;
+    margin-top: 60px;
+    white-space: nowrap ;
+    justify-content: center;
 }
 
 .booking-options a {
@@ -95,9 +141,14 @@ h1 {font-family:'Playfair Display', serif;}
 </style>
 </head>
 <body>
+  <header>
+    <img src="avatar.png" class="avatar">
+    <div class="brand">Narendra India Travel</div>
+  </header>
 
 <div class="section">
 <h1>Book Your Himalayan Journey</h1>
+<h2> Jolly Grant Airport, Dehradun, Uttarakhand.</h2>
 <p>
 You can reach me directly through WhatsApp, Instagram, or Email.
 I personally respond to every message.
@@ -139,7 +190,9 @@ I personally respond to every message.
             </a>
         </div>
 
-        <p class="footer-note">© 2026 Narendra India Travel</p>
+        <p class="footer-note">© 2026 Narendra India Travel<br>
+          Jolly Grant Airport, Dehradun | Uttarakhand Taxi Service
+        </p>
     </div>
 </footer>
 

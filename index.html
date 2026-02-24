@@ -11,6 +11,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -21,98 +31,86 @@ body {
         #f5f7f8 100%
     );
 }
+/* =========================
+   HEADER FINAL STRUCTURE
+========================= */
 
-
-
-/*header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 170px;
-    padding: 0 60px;
-}*/
 header {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    height: 170px;
     width: 100%;
-    max-width: 100%;
     padding: 20px 8%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 10;
-    background: transparent;   /* IMPORTANT */
-}
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;     /* critical */
-    width: 90%;
-    padding: 20px 60px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: transparent;
     z-index: 1000;
+    background: transparent;
+    box-sizing: border-box;
 }
-
 
 .avatar {
-    position: absolute;
-    left: 60px;
-    height: 100%;
+    height: 130px;
     width: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 70px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 1.5px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
     color: #f5f5f5;
-    /*font-size: 1.8rem;*/
-    font-weight: 600;
     white-space: nowrap;
     text-align: center;
 }
 
-
-
 .hero {
-  font-size: 55px;
     position: relative;
-    height: 95vh;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0 8%;
+    box-sizing: border-box;
+
     background-image:
         linear-gradient(
             rgba(0,0,0,0.45),
             rgba(0,0,0,0.45)
         ),
         url('himalayan-hero.jpg');
+
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 
+
 .hero h1 {
+  display: block;
     color: #f5f5f5;   /* warm white */
     font-size: 3rem;
     letter-spacing: 1px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    justify-content: center;
+}
+
+.hero h2 {
+  display: block;
+    color: #f5f5f5;   /* warm white */
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+    justify-content: center;
 }
 
 .hero p {
@@ -314,8 +312,19 @@ header {
 }
 
 @media (max-width: 768px) {
-    .slides img {
-        height: 300px;
+
+    header {
+        position: absolute;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .avatar {
+        height: 80px;
+    }
+
+    .brand {
+        font-size: 28px;
     }
 }
 
@@ -378,9 +387,141 @@ footer {
     color: #d6bfae;  /* warm sand tone */
     transform: translateY(-4px);
 }
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+
+@media (max-width: 768px) {
+  header {
+          padding: 15px 20px;
+      }
+
+      .avatar {
+          height: 75px;
+      }
+
+      .brand {
+          font-size: 26px;
+          white-space: normal;
+          text-align: center;
+      }
+
+      .hero {
+          height: 100vh;
+          padding-top: 140px; /* prevents text overlap */
+          background-attachment: scroll;
+      }
+
+      .hero h1 {
+          font-size: 1.8rem;
+      }
+
+      .hero h2 {
+          font-size: 1rem;
+      }
+    /* ----- HEADER FIX ----- */
+    header {
+        width: 100%;
+        padding: 15px 20px;
+        justify-content: center;
+    }
+
+    .avatar {
+        position: relative;
+        left: 0;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .brand {
+        position: relative;
+        left: auto;
+        transform: none;
+        font-size: 28px;
+        text-align: center;
+        white-space: normal;
+    }
+
+    /* ----- HERO FIX ----- */
+    .hero {
+        height: auto;
+        padding: 120px 20px 80px 20px;
+        background-attachment: scroll; /* VERY IMPORTANT */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* ----- SECTION SPACING ----- */
+    .section {
+        padding: 60px 20px;
+    }
+
+    /* About text */
+    #about p,
+    .section p {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+
+    /* ----- DESTINATION GRID FIX ----- */
+    .row-four,
+    .row-five {
+        grid-template-columns: 1fr;   /* Single column */
+        gap: 20px;
+    }
+
+    .card {
+        min-height: auto;
+    }
+
+    /* ----- CAROUSEL FIX ----- */
+    .slides img {
+        height: 250px;
+    }
+
+    .prev,
+    .next {
+        font-size: 20px;
+        padding: 8px 12px;
+    }
+
+    /* ----- CTA BUTTONS ----- */
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    /* ----- REVIEWS BUTTONS STACK ----- */
+    .reviews {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* ----- FOOTER ICONS ----- */
+    .social-icons a {
+        font-size: 22px;
+        margin: 0 12px;
+    }
+}
+
 
 
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -391,6 +532,7 @@ footer {
 </header>
 
 <div class="hero">
+<h2 style="font-family: 'serif'">Jolly Grant Airport, Dehradun | Uttarakhand Taxi Service</h2><br><br>
 <h1 style="font-family: 'serif'">Your True Companion,<BR>
   In the Himalayas...</h1>
 </div>
@@ -408,7 +550,7 @@ You won’t even realise how time passes on our journeys together.
 
 <div class="section">
 <h2 style="text-align:center; margin-bottom:40px;">
-Destinations & Routes across Uttarakhand
+Destinations & Routes across Uttarakhand <br>from Jolly Grant Airport, Dehradun
 </h2>
 
 <div class="destinations">
@@ -488,7 +630,6 @@ Personalised journeys designed around your time, comfort and travel goals.
 
 <div class="section">
 <h2>Trusted by Travellers Worldwide</h2>
-<div class="section">
 
     <div class="carousel">
 
@@ -518,7 +659,7 @@ Personalised journeys designed around your time, comfort and travel goals.
         <button class="next">&#10095;</button>
 
     </div>
-</div>
+
 
 <div class="reviews">
 <a class="cta-button" href="https://maps.app.goo.gl/bLfRRsYeEvBsAitRA" target="_blank">
@@ -549,7 +690,9 @@ Read Google Reviews
             </a>
         </div>
 
-        <p class="footer-note">© 2026 Narendra India Travel</p>
+        <p class="footer-note">© 2026 Narendra India Travel<br>
+        Jolly Grant Airport, Dehradun | Uttarakhand Taxi Service
+      </p>
     </div>
 </footer>
 <script>
